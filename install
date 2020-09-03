@@ -23,7 +23,7 @@ export CODEBUILD_GIT_MOST_RECENT_TAG="$(git describe --tags --abbrev=0)"
 export CODEBUILD_PULL_REQUEST_NUMBER=$(echo $CODEBUILD_WEBHOOK_TRIGGER | grep "pr/" | cut -d "/" -f2)
 
 export CODEBUILD_PULL_REQUEST=false
-if [ "$PULLREQUEST_NUMBER" ] ; then
+if [ "$CODEBUILD_PULL_REQUEST_NUMBER" ] ; then
   export CODEBUILD_PULL_REQUEST=true;
 fi
 
